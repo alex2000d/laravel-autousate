@@ -3,7 +3,9 @@
     <div class="container-fluid bg">
         <div class="row">
             <div class="col-12 col-lg-2 mt-4">
-              logo qui
+                <div class="logo">
+                    <img src="{{ Vite::asset('resources/img/Rental_Cars-removebg-preview.png') }}" alt="">
+                </div>
             </div>
             <div class="col-12 col-lg-8 mt-4">
                 <ul class="list-unstyled d-flex gap-3 justify-content-center">
