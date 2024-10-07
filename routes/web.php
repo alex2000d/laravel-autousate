@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController as PageController;
+use App\Http\Controllers\AutoController as AutoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,3 +16,4 @@ use App\Http\Controllers\PageController as PageController;
 */
 
 Route::get('/', [PageController::class, 'index'])->name('homepage');
+Route::resource('/autos', AutoController::class);
