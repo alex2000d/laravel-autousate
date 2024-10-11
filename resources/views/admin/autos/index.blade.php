@@ -12,23 +12,27 @@
     </div>
     <div class="row">
             @foreach($autos as $auto)
-            <div class="col-6 mb-5 p-0 border border-grey border-end-0">
-                <div class="image-auto">
-                    <img src="{{ $auto->image }}" class="@if(!$auto->image) d-none @endif" alt="{{ $auto->name }}">
+                <div class="col-6 mb-5 p-0 border border-grey border-end-0">
+                <a href="{{ route('admin.autos.show', ['auto' => $auto->id]) }}">
+                    <div class="image-auto">
+                        <img src="{{ $auto->image }}" class="@if(!$auto->image) d-none @endif" alt="{{ $auto->name }}">
+                    </div>
+                </a>
                 </div>
-            </div>
-            <div class="col-6 mb-5 py-3 d-flex flex-column border border-grey border-start-0">
-                <div class="info">
-                    <h2 class="mb-5">{{ $auto->name }}</h2>
-                    <p><strong>Motore:</strong> {{ $auto->engine }}</p>
-                    <p><strong>Optionals disponibili:</strong> {{ $auto->optionals }}</p>
-                    <p><strong>disponibilità:</strong> {{ $auto->status }}</p>
+                <div class="col-6 mb-5 py-3 d-flex flex-column border border-grey border-start-0">
+                    <a href="{{ route('admin.autos.show', ['auto' => $auto->id]) }}" class="text-decoration-none text-black">
+                        <div class="info">
+                            <h2 class="mb-5">{{ $auto->name }}</h2>
+                            <p><strong>Motore:</strong> {{ $auto->engine }}</p>
+                            <p><strong>Optionals disponibili:</strong> {{ $auto->optionals }}</p>
+                            <p><strong>disponibilità:</strong> {{ $auto->status }}</p>
+                        </div>
+                        <div class="mt-auto">
+                            <hr>
+                            <p><strong>Prezzo:</strong> {{ $auto->price }}&euro;</p>
+                        </div>
+                    </a>
                 </div>
-                <div class="mt-auto">
-                    <hr>
-                    <p><strong>Prezzo:</strong> {{ $auto->price }}&euro;</p>
-                </div>
-            </div>
             @endforeach
         </div>
 </div>
