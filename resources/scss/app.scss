@@ -1,5 +1,10 @@
 @import '~bootstrap/scss/bootstrap';
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 .image {
     width: 500px;
@@ -23,11 +28,11 @@
     border-radius: 20px;
 }
 
-.best-sales {
-    width: 100%;
-    height: 70%;
-    object-fit: contain;
-}
+// .best-sales {
+//     width: 500px;
+//     height: 70%;
+//     object-fit: contain;
+// }
 
 .bg-gray {
     background-color: #e6e9f6;
@@ -53,3 +58,114 @@
     object-fit: cover;
     border-radius: 20px;
 }
+
+.slider{
+    height: 250px;
+    margin: auto;
+    position: relative;
+    width: 90%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.slide-track{
+    display: flex;
+    width: calc(250px * 18);
+    animation: scroll 40s linear infinite;
+}
+
+.slide-track:hover{
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(calc(-250px * 9))
+    }
+}
+
+.slide{
+    height: 200px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    perspective: 100px;
+}
+
+.slider{
+    .slide-track{
+        .slide{
+            img{
+                width: 300px;
+                transition: transform 0.5s;
+            }
+        }
+}
+}
+
+
+img:hover{
+    transform: translateZ(20px);
+}
+
+// .jumbo-auto{
+//     background-image: url('C:/Users/andre/Desktop/boolean/laravel-autousate/laravel-autousate/resources/img/pexels-introspectivedsgn-28862474.jpg');
+//     background-size: cover;
+//     background-position: center;
+//     height: 800px;
+//     opacity: ;
+// }
+
+
+.jumbo-auto {
+    position: relative;
+    height: 800px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.jumbo-auto::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('C:/Users/andre/Desktop/boolean/laravel-autousate/laravel-autousate/resources/img/pexels-introspectivedsgn-28862474.jpg');
+    background-size: cover;
+    background-position: center;
+    transition: filter 0.5s ease;
+    z-index: 1;
+}
+
+.jumbo-auto:hover::before {
+    filter: blur(8px);
+}
+
+.jumbo-content {
+    position: relative;
+    color: white;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px; 
+}
+
+.jumbo-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.jumbo-content p {
+    font-size: 1.2rem;
+}
+
