@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Models\Auto;
+use App\Http\Controllers\Controller;
+
 class AutoController extends Controller
 {
     /**
@@ -14,7 +16,7 @@ class AutoController extends Controller
     public function index()
     {
         $autos = Auto::all();
-        return view('autos.index', compact('autos'));
+        return view('admin.autos.index', compact('autos'));
     }
 
     /**
