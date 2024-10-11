@@ -12,9 +12,9 @@
     </div>
     <div class="row">
             @foreach($autos as $auto)
-            <div class="col-6 mb-5 border border-grey border-end-0">
+            <div class="col-6 mb-5 p-0 border border-grey border-end-0">
                 <div class="image-auto">
-                    <img src="{{ $auto->image }}" class=" @if(!$auto->image) d-none @endif" alt="{{ $auto->name }}">
+                    <img src="{{ $auto->image }}" class="@if(!$auto->image) d-none @endif" alt="{{ $auto->name }}">
                 </div>
             </div>
             <div class="col-6 mb-5 py-3 d-flex flex-column border border-grey border-start-0">
