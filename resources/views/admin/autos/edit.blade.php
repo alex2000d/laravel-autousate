@@ -4,10 +4,10 @@
 <div class="container">
     <div class="row">
         <div class="col-12 my-5">
-            <h2 class="text-center">Aggiungi nuova macchina</h2>
+            <h2 class="text-center">modifica macchina</h2>
         </div>
         <div class="col-12">
-            <form action="{{ route('admin.autos.store') }}" method="post">
+            <form action="{{ route('admin.autos.update', ['auto' => $auto->id]) }}" method="post">
                 @csrf 
                 <div class="row">
                     <div class="col-6 mb-3">

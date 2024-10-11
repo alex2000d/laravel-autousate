@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Auto;
 use App\Http\Controllers\Controller;
 
+use App\Http\Requests\StoreAutoRequest;
+use App\Http\Requests\UpdateAutoRequest;
+
 class AutoController extends Controller
 {
     /**
@@ -35,9 +38,9 @@ class AutoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreAutoRequest $request)
     {
-        $form_data = $request->all();
+        $form_data = $request->validated();
         $project = new Auto();
         $project->fill($form_data);
         $project->save();
