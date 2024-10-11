@@ -12,22 +12,89 @@
           </div>
       </div>
    </div>
-   <div class="container-fluid bg-gray mt-5">
-       <div class="row text-center">
-          <div class="col-12 my-5">
-              <h1 class="text-center">Le nostre migliori vendite del 2023/2024</h1>
-          </div>
-          <div class="col-4">
-              <img class="best-sales" class="jumbotron" src="{{ Vite::asset('resources/img/ford-best-sales.avif') }}" alt="">
-              <strong><h3>Ford Kuga</h3></strong>
+   <div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="col-12 my-5">
+                <h1 class="text-center">Le nostre migliori vendite del 2023/2024</h1>
+            </div>
+        </div>
+    </div>
+   </div>
+   <div class="slider w-100 d-flex justify-content-center align-items-center mt-5">
+       <div class="slide-track">
+          <div class="slide mx-5">
+              <img src="{{ Vite::asset('resources/img/ford-best-sales.avif') }}" alt="">
+              <!-- <strong><h3>Ford Kuga</h3></strong> -->
            </div>
-           <div class="col-4">
-              <img class="best-sales" class="jumbotron" src="{{ Vite::asset('resources/img/ford-expedition-best-sales.png') }}" alt="">
-              <strong><h3>Ford Expedition</h3></strong>
+           <div class="slide mx-5">
+              <img src="{{ Vite::asset('resources/img/ford-expedition-best-sales.png') }}" alt="">
+              <!-- <strong><h3>Ford Expedition</h3></strong> -->
           </div>
-          <div class="col-4">
-              <img class="best-sales" class="jumbotron" src="{{ Vite::asset('resources/img/jeep-grand-cherokee-best-sales.png') }}" alt="">
-              <strong><h3>Jeep Grand Cherokee</h3></strong>
+          <div class="slide mx-5">
+              <img src="{{ Vite::asset('resources/img/jeep-grand-cherokee-best-sales.png') }}" alt="">
+              <!-- <strong><h3>Jeep Grand Cherokee</h3></strong> -->
+          </div>
+          <div class="slide mx-5">
+              <img src="{{ Vite::asset('resources/img/ford-best-sales.avif') }}" alt="">
+              <!-- <strong><h3>Ford Kuga</h3></strong> -->
+           </div>
+           <div class="slide mx-5">
+              <img src="{{ Vite::asset('resources/img/ford-expedition-best-sales.png') }}" alt="">
+              <!-- <strong><h3>Ford Expedition</h3></strong> -->
+          </div>
+          <div class="slide mx-5">
+              <img src="{{ Vite::asset('resources/img/jeep-grand-cherokee-best-sales.png') }}" alt="">
+              <!-- <strong><h3>Jeep Grand Cherokee</h3></strong> -->
+          </div>
+          <div class="slide mx-5">
+              <img src="{{ Vite::asset('resources/img/ford-best-sales.avif') }}" alt="">
+              <!-- <strong><h3>Ford Kuga</h3></strong> -->
+           </div>
+           <div class="slide mx-5">
+              <img src="{{ Vite::asset('resources/img/ford-expedition-best-sales.png') }}" alt="">
+              <!-- <strong><h3>Ford Expedition</h3></strong> -->
+          </div>
+          <div class="slide mx-5">
+              <img src="{{ Vite::asset('resources/img/jeep-grand-cherokee-best-sales.png') }}" alt="">
+              <!-- <strong><h3>Jeep Grand Cherokee</h3></strong> -->
+          </div>
+
+          <div class="slide mx-5">
+              <img src="{{ Vite::asset('resources/img/ford-best-sales.avif') }}" alt="">
+              <!-- <strong><h3>Ford Kuga</h3></strong> -->
+           </div>
+           <div class="slide mx-5">
+              <img src="{{ Vite::asset('resources/img/ford-expedition-best-sales.png') }}" alt="">
+              <!-- <strong><h3>Ford Expedition</h3></strong> -->
+          </div>
+          <div class="slide mx-5">
+              <img src="{{ Vite::asset('resources/img/jeep-grand-cherokee-best-sales.png') }}" alt="">
+              <!-- <strong><h3>Jeep Grand Cherokee</h3></strong> -->
+          </div>
+          <div class="slide mx-5">
+              <img src="{{ Vite::asset('resources/img/ford-best-sales.avif') }}" alt="">
+              <!-- <strong><h3>Ford Kuga</h3></strong> -->
+           </div>
+           <div class="slide mx-5">
+              <img src="{{ Vite::asset('resources/img/ford-expedition-best-sales.png') }}" alt="">
+              <!-- <strong><h3>Ford Expedition</h3></strong> -->
+          </div>
+          <div class="slide mx-5">
+              <img src="{{ Vite::asset('resources/img/jeep-grand-cherokee-best-sales.png') }}" alt="">
+              <!-- <strong><h3>Jeep Grand Cherokee</h3></strong> -->
+          </div>
+          <div class="slide mx-5">
+              <img src="{{ Vite::asset('resources/img/ford-best-sales.avif') }}" alt="">
+              <!-- <strong><h3>Ford Kuga</h3></strong> -->
+           </div>
+           <div class="slide mx-5">
+              <img src="{{ Vite::asset('resources/img/ford-expedition-best-sales.png') }}" alt="">
+              <!-- <strong><h3>Ford Expedition</h3></strong> -->
+          </div>
+          <div class="slide mx-5">
+              <img src="{{ Vite::asset('resources/img/jeep-grand-cherokee-best-sales.png') }}" alt="">
+              <!-- <strong><h3>Jeep Grand Cherokee</h3></strong> -->
           </div>
       </div>
    </div>
