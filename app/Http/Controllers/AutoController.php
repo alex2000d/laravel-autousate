@@ -26,7 +26,7 @@ class AutoController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.autos.create');
     }
 
     /**

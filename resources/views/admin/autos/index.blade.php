@@ -6,7 +6,7 @@
         <div class="col-12 d-flex flex-column justify-content-between">
             <h1 class="text-center flex-grow-1">Auto Disponibili</h1>
             <div class="mt-auto text-end">
-                <a href="" class="btn btn-success mb-3">Aggiungi</a>
+                <a href="{{ route('admin.autos.create') }}" class="btn btn-success mb-3">Aggiungi</a>
             </div>
         </div>
     </div>
@@ -20,18 +20,22 @@
                 </a>
                 </div>
                 <div class="col-6 mb-5 py-3 d-flex flex-column border border-grey border-start-0">
-                    <a href="{{ route('admin.autos.show', ['auto' => $auto->id]) }}" class="text-decoration-none text-black">
-                        <div class="info">
+                        <div class="info flex-grow-1">
                             <h2 class="mb-5">{{ $auto->name }}</h2>
                             <p><strong>Motore:</strong> {{ $auto->engine }}</p>
                             <p><strong>Optionals disponibili:</strong> {{ $auto->optionals }}</p>
+                            <p><strong>quantità:</strong> {{ $auto->quantity }}</p>
                             <p><strong>disponibilità:</strong> {{ $auto->status }}</p>
                         </div>
                         <div class="mt-auto">
                             <hr>
                             <p><strong>Prezzo:</strong> {{ $auto->price }}&euro;</p>
+                            <div class="d-flex justify-content-end">
+                                <a href="{{ route('admin.autos.show', ['auto' => $auto->id]) }}" class="text-decoration-none text-black">
+                                    <div class="mt-3 btn btn-success">Visualizza dettagli</div>
+                                </a>
+                            </div>
                         </div>
-                    </a>
                 </div>
             @endforeach
         </div>
