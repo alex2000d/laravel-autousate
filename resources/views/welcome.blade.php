@@ -1,6 +1,12 @@
 @extends('layouts.app')
 @section('content')
 <main>
+    <div class="jumbo-auto pt-5">
+        <div class="jumbo-content pt-5">
+            <h1>Rental Cars</h1>
+            <p>Scegli l'auto dei tuoi sogni, senza compromessi!</p>
+        </div>
+    </div>
    <div class="container">
       <div class="row">
           <div class="col-6 mt-5">

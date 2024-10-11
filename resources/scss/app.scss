@@ -113,5 +113,59 @@ img:hover{
     transform: translateZ(20px);
 }
 
+// .jumbo-auto{
+//     background-image: url('C:/Users/andre/Desktop/boolean/laravel-autousate/laravel-autousate/resources/img/pexels-introspectivedsgn-28862474.jpg');
+//     background-size: cover;
+//     background-position: center;
+//     height: 800px;
+//     opacity: ;
+// }
 
+
+.jumbo-auto {
+    position: relative;
+    height: 800px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.jumbo-auto::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('C:/Users/andre/Desktop/boolean/laravel-autousate/laravel-autousate/resources/img/pexels-introspectivedsgn-28862474.jpg');
+    background-size: cover;
+    background-position: center;
+    transition: filter 0.5s ease;
+    z-index: 1;
+}
+
+.jumbo-auto:hover::before {
+    filter: blur(8px);
+}
+
+.jumbo-content {
+    position: relative;
+    color: white;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px; 
+}
+
+.jumbo-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.jumbo-content p {
+    font-size: 1.2rem;
+}
 
