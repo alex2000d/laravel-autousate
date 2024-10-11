@@ -31,13 +31,24 @@
                             <hr>
                             <p><strong>Prezzo:</strong> {{ $auto->price }}&euro;</p>
                             <div class="d-flex justify-content-end">
-                                <a href="{{ route('admin.autos.show', ['auto' => $auto->id]) }}" class="text-decoration-none text-black">
+                                <a href="{{ route('admin.autos.edit', ['auto' => $auto->id]) }}" class="text-decoration-none text-black me-2">
+                                    <div class="mt-3 btn btn-success">Modifica</div>
+                                </a>
+                                <a href="{{ route('admin.autos.show', ['auto' => $auto->id]) }}" class="text-decoration-none text-black me-2">
                                     <div class="mt-3 btn btn-success">Visualizza dettagli</div>
                                 </a>
+                                <form action="{{ route('admin.autos.destroy', ['auto' => $auto->id]) }}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="mt-3 btn btn-danger delete-project">
+                                        <span>Elimina</span>
+                                    </button>
+                                </form>
                             </div>
                         </div>
                 </div>
             @endforeach
         </div>
 </div>
+@include('admin.autos.partials.modal_delete')
 @endsection

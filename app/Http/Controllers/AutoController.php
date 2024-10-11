@@ -80,7 +80,7 @@ class AutoController extends Controller
     public function update(UpdateAutoRequest $request, Auto $auto)
     {
         $form_data = $request->validated();
-        $project->update($form_data);
+        $auto->update($form_data);
 
         return redirect()->route('admin.autos.index');
     }
@@ -91,8 +91,10 @@ class AutoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Auto $auto)
     {
-        //
+        $project->delete();
+
+        return redirect()->route('admin.projects.index');
     }
 }
