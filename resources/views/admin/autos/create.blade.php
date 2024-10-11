@@ -21,27 +21,27 @@
                 <div class="row">
                     <div class="col-6 mb-3">
                         <label for="" class="control-label">Nome dell'auto</label>
-                        <input type="text" name="name" id="" class="form-control" placeholder="Nome dell'auto">
+                        <input type="text" name="name" id="" class="form-control" placeholder="Nome dell'auto" value="{{ old('name') }}">
                     </div>
                     <div class="col-6 mb-3">
                         <label for="" class="control-label">Tipo di motore</label>
-                        <input type="text" name="engine" id="" class="form-control" placeholder="Tipo di motore">
+                        <input type="text" name="engine" id="" class="form-control" placeholder="Tipo di motore" value="{{ old('engine') }}">
                     </div>
                     <div class="col-6 mb-3">
                         <label for="" class="control-label">Prezzo</label>
-                        <input type="text" name="price" id="" class="form-control" placeholder="Prezzo">
+                        <input type="text" name="price" id="" class="form-control" placeholder="Prezzo" value="{{ old('price') }}">
                     </div>
                     <div class="col-6 mb-3">
                         <label for="" class="control-label">Quantità</label>
-                        <input type="text" name="quantity" id="" class="form-control" placeholder="Quantità">
+                        <input type="text" name="quantity" id="" class="form-control" placeholder="Quantità" value="{{ old('quantity') }}">
                     </div>
                     <div class="col-6 mb-3">
                         <label for="" class="control-label">Optionals</label>
-                        <input type="text" name="optionals" id="" class="form-control" placeholder="Optionals">
+                        <input type="text" name="optionals" id="" class="form-control" placeholder="Optionals" value="{{ old('optionals') }}">
                     </div>
                     <div class="col-6 mb-3">
                         <label for="" class="control-label">Status</label>
-                        <input type="text" name="status" id="" class="form-control" placeholder="Status">
+                        <input type="text" name="status" id="" class="form-control" placeholder="Status" value="{{ old('status') }}">
                     </div>
                 </div>
                 <div class="col-6 mb-5">
