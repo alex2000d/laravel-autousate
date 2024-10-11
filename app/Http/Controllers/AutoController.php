@@ -93,8 +93,8 @@ class AutoController extends Controller
      */
     public function destroy(Auto $auto)
     {
-        $project->delete();
+        $auto->delete();
 
-        return redirect()->route('admin.projects.index');
+        return redirect()->route('admin.autos.index');
     }
 }

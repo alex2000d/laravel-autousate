@@ -40,7 +40,7 @@
                                 <form action="{{ route('admin.autos.destroy', ['auto' => $auto->id]) }}" method="post">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="mt-3 btn btn-danger delete-project">
+                                    <button type="submit" class="mt-3 btn btn-danger delete-auto">
                                         <span>Elimina</span>
                                     </button>
                                 </form>
