@@ -37,7 +37,12 @@ class AutoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $form_data = $request->all();
+        $project = new Auto();
+        $project->fill($form_data);
+        $project->save();
+
+        return redirect()->route('admin.autos.index');
     }
 
     /**
