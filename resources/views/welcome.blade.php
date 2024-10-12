@@ -3,8 +3,8 @@
 <main>
     <div class="jumbo-auto pt-5">
         <div class="jumbo-content pt-5">
-            <h1>Rental Cars</h1>
-            <p>Scegli l'auto dei tuoi sogni, senza compromessi!</p>
+                <h1>Rental Cars</h1>
+                <strong><p>Scegli l'auto dei tuoi sogni, senza compromessi!</p></strong>
         </div>
     </div>
    <div class="container">

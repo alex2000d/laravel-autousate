@@ -29,7 +29,8 @@ class UpdateAutoRequest extends FormRequest
             'engine' => 'required|string|max:255',
             'price' => 'required|numeric|min:0',
             'quantity' => 'required|integer|min:1',
-            'status' => 'nullable|string|in:available,sold'
+            'status' => 'nullable|string|in:available,sold',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];
     }
     public function messages() {

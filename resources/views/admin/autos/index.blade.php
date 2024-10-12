@@ -15,7 +15,7 @@
                 <div class="col-6 mb-5 p-0 border border-grey border-end-0">
                 <a href="{{ route('admin.autos.show', ['auto' => $auto->id]) }}">
                     <div class="image-auto">
-                        <img src="{{ $auto->image }}" class="@if(!$auto->image) d-none @endif" alt="{{ $auto->name }}">
+                        <img src="../storage/{{ $auto->image }}" class="@if(!$auto->image) d-none @endif" alt="{{ $auto->name }}">
                     </div>
                 </a>
                 </div>

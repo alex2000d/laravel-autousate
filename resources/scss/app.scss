@@ -1,6 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -59,7 +59,7 @@
     border-radius: 20px;
 }
 
-.slider{
+.slider {
     height: 250px;
     margin: auto;
     position: relative;
@@ -69,26 +69,27 @@
     overflow: hidden;
 }
 
-.slide-track{
+.slide-track {
     display: flex;
     width: calc(250px * 18);
     animation: scroll 40s linear infinite;
 }
 
-.slide-track:hover{
+.slide-track:hover {
     animation-play-state: paused;
 }
 
 @keyframes scroll {
-    0%{
+    0% {
         transform: translateX(0);
     }
-    100%{
+
+    100% {
         transform: translateX(calc(-250px * 9))
     }
 }
 
-.slide{
+.slide {
     height: 200px;
     width: 250px;
     display: flex;
@@ -97,19 +98,19 @@
     perspective: 100px;
 }
 
-.slider{
-    .slide-track{
-        .slide{
-            img{
+.slider {
+    .slide-track {
+        .slide {
+            img {
                 width: 300px;
                 transition: transform 0.5s;
             }
         }
-}
+    }
 }
 
 
-img:hover{
+img:hover {
     transform: translateZ(20px);
 }
 
@@ -136,15 +137,16 @@ img:hover{
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('C:/Users/andre/Desktop/boolean/laravel-autousate/laravel-autousate/resources/img/pexels-introspectivedsgn-28862474.jpg');
+    background-image: url('../img/pexels-introspectivedsgn-28862474.jpg');
     background-size: cover;
     background-position: center;
-    transition: filter 0.5s ease;
+    transition: filter 2s ease;
+    filter: blur(8px);
     z-index: 1;
 }
 
 .jumbo-auto:hover::before {
-    filter: blur(8px);
+    filter: blur(0px);
 }
 
 .jumbo-content {
@@ -157,15 +159,20 @@ img:hover{
     height: 100%;
     text-align: center;
     padding: 20px;
-    border-radius: 10px; 
+    border-radius: 10px;
 }
 
 .jumbo-content h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: rgb(148, 148, 148);
+
 }
 
 .jumbo-content p {
     font-size: 1.2rem;
-}
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: rgb(146, 146, 146);
 
+}

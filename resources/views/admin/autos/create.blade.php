@@ -16,9 +16,16 @@
                     </ul>
                 </div>
             @endif
-            <form action="{{ route('admin.autos.store') }}" method="post">
+            <form action="{{ route('admin.autos.store') }}" method="post" enctype="multipart/form-data">
                 @csrf 
                 <div class="row">
+                    <div class="col-6">
+                        <label for="" class="control-label">immagine</label>
+                        <input type="file" class="form-control" name="image" placeholder="immagine" value="{{old('image')}}">
+                        @error ('image')
+                            <span class="text-danger">{{$message}}</span>
+                        @enderror
+                    </div>
                     <div class="col-6 mb-3">
                         <label for="" class="control-label">Nome dell'auto</label>
                         <input type="text" name="name" id="" class="form-control" placeholder="Nome dell'auto" value="{{ old('name') }}">

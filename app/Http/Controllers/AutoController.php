@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Auto;
 use App\Http\Controllers\Controller;
-
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreAutoRequest;
 use App\Http\Requests\UpdateAutoRequest;
 
@@ -41,6 +42,13 @@ class AutoController extends Controller
     public function store(StoreAutoRequest $request)
     {
         $form_data = $request->validated();
+        if ($request->hasFile('image')) {
+            $path = Storage::disk('public')->put('image', $form_data['image']);
+            $form_data['image'] = $path;
+        }
+        else {
+            $form_data['image'] = 'https://placehold.co/600x400?text=immagine+copertina';
+        }
         $project = new Auto();
         $project->fill($form_data);
         $project->save();
@@ -80,6 +88,13 @@ class AutoController extends Controller
     public function update(UpdateAutoRequest $request, Auto $auto)
     {
         $form_data = $request->validated();
+        if ($request->hasFile('image')) {
+            if(Str::startsWith($auto->image, 'https') === false){
+                Storage::disk('public')->delete($auto->image);
+            }
+            $path = Storage::disk('public')->put('image', $form_data['image']);
+            $form_data['image'] = $path;
+        }
         $auto->update($form_data);
 
         return redirect()->route('admin.autos.index');

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('engine');
             $table->decimal('price', 8, 2);
-            $table->string('image')->nullable();
+            $table->string('image')->default('https://placehold.co/600x400?text=immagine+copertina');
             $table->string('quantity');
             $table->string('status')->default('available');
             $table->timestamps();
