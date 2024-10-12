@@ -17,18 +17,43 @@ class AutosTableSeeder extends Seeder
     public function run(Faker $faker)
     {
         for ($i = 0; $i < 15; $i++) {
+                 // Associo le marche ai loro modelli
+                  $carModels = [
+                   'Toyota' => 'Yaris',
+                   'Renault' => 'Clio',
+                   'Mercedes Benz' => 'Classe A',
+                   'BMW' => 'M4',
+                   'Fiat' => 'Panda',
+                   'Alfa Romeo' => '155',
+                   'Ferrari' => '458',
+                   'Lamborghini' => 'Huracan',
+                   'Honda' => 'Civic',
+                ];
 
-             $auto = new Auto();
-             $auto->optionals = implode(', ', $faker->randomElements(['GPS','Sedili_riscaldati', 'Sensori_di_parcheggio','Tetto_apribile','Cruise_control'], 3));
-             $auto->name = $faker->randomElement(['Toyota Yaris V4', 'Renault Clio V4', 'Mercedes Benz V6', 'BMW M4 V6', 'Fiat Panda V4', 'Alfa Romeo 155 V4', 'Ferrari California V8', 'Lamborhini Huracan V8', 'Honda Civic V4']);
-             $auto->engine = $faker->randomElement(['GPL', 'disel', 'benzina', 'Electric']);
-             $auto->price = $faker->randomFloat(2, 10000, 200000);
-             $auto->image = $faker->imageUrl(640, 480, 'cars', true, 'auto');
-             $auto->quantity = $faker->numberBetween(1, 100);
-             $auto->status = $faker->randomElement(['available', 'sold']);
+                 // Cicla attraverso i marchi e i modelli
+                 foreach ($carModels as $brand => $model) {
+                     // Crea una nuova auto
+                     $auto = new Auto();
 
-             $auto->save();
-            
+                    $auto->brand = $brand;   // Marca dell'auto
+                    $auto->model = $model;   // Modello dell'auto
+                    $auto->year = $faker->numberBetween(2000, 2023);  // Anno di produzione
+                    $auto->color = $faker->safeColorName();  // Colore casuale
+                    $auto->horsepower = $faker->numberBetween(70, 600);  // Potenza in cavalli
+                    $auto->fuel_type = $faker->randomElement(['GPL', 'diesel', 'benzina', 'elettrico']);  // Tipo di carburante
+                    $auto->doors = $faker->randomElement([3, 5]);  // Numero di porte
+                    $auto->mileage = $faker->numberBetween(0, 200000);  // Chilometraggio
+                    $auto->change_type = $faker->randomElement(['manuale', 'automatica']);  // Cambio
+                    $auto->optionals = implode(', ', $faker->randomElements(['GPS', 'Sedili riscaldati', 'Sensori di parcheggio', 'Tetto apribile', 'Cruise control'], 3));  // Opzioni aggiuntive
+                    $auto->price = $faker->randomFloat(2, 10000, 200000);  // Prezzo casuale
+                    $auto->image = $faker->imageUrl(640, 480, 'cars', true, 'auto');  // Immagine casuale di un'auto
+                    $auto->quantity = $faker->numberBetween(1, 100);  // Quantità disponibile
+                    $auto->status = $faker->randomElement(['available', 'sold']);  // Stato dell'auto: disponibile o venduta
+
+                     // Salva l'auto nel database
+                     $auto->save();
+            }
+
         }
     }
 }

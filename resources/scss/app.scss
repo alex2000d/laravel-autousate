@@ -22,6 +22,12 @@
     }
 }
 
+.logo_laravel {
+    img {
+        width: 100px;
+    }
+}
+
 .jumbotron {
     width: 100%;
     object-fit: cover;
@@ -50,6 +56,42 @@
     height: 250px;
     object-fit: fill;
     border-radius: 20px;
+}
+
+.brand {
+    width: 80%;
+    height: 200px;
+    object-fit: fill;
+    margin-top: 100px;
+}
+
+.play-store {
+    width: 40px;
+}
+
+.apple-store {
+    width: 35px;
+}
+
+
+
+.mobile {
+    width: 80%;
+}
+
+.position {
+    position: relative;
+    top: 130px;
+    z-index: -1;
+}
+
+
+.z-index {
+    z-index: 1;
+}
+
+.bg-yellow {
+    background-color: #ffa304;
 }
 
 .velocity {

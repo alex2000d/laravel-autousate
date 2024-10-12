@@ -16,12 +16,19 @@ return new class extends Migration
         Schema::create('autos', function (Blueprint $table) {
             $table->id();
             $table->string('optionals');
-            $table->string('name');
-            $table->string('engine');
-            $table->decimal('price', 8, 2);
-            $table->string('image')->default('https://placehold.co/600x400?text=immagine+copertina');
-            $table->string('quantity');
-            $table->string('status')->default('available');
+            $table->string('brand');  // Marca dell'auto (es. BMW, Audi)
+            $table->string('model');  // Modello dell'auto
+            $table->year('year');  // Anno di produzione dell'auto
+            $table->string('fuel_type');  // Tipo di carburante (GPL, diesel, benzina, elettrico)
+            $table->integer('horsepower');  // Potenza in cavalli
+            $table->integer('doors');  // Numero di porte
+            $table->string('change_type');  // Cambio (manuale o automatico)
+            $table->string('color');  // Colore dell'auto
+            $table->integer('mileage')->nullable();  // Chilometraggio (opzionale per auto nuove)
+            $table->decimal('price', 8, 2);  // Prezzo dell'auto
+            $table->string('image')->default('https://placehold.co/600x400?text=immagine+copertina');  // Immagine predefinita
+            $table->integer('quantity');  // Quantità disponibile (numeric, non string)
+            $table->string('status')->default('available');  // Stato (disponibile o venduta 
             $table->timestamps();
         });
     }

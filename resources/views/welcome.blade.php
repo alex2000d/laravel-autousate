@@ -105,9 +105,9 @@
       </div>
    </div>
    <div class="container mt-5">
-    <div class="row text-center">
+     <div class="row text-center">
        <div class="col-12 my-5">
-           <h1 class="text-center">Qui ci dobbiamo mettere un titolo!!!!</h1>
+           <h1 class="text-center">Scegli il giusto stile</h1>
        </div>
        <div class="col-4">
         <strong><h3>avventura e comfort</h3></strong><hr>
@@ -124,8 +124,29 @@
         <p>Scegli la macchina che fa per te e cambia il tuo stile di vita. Fai la tua scelta</p>
            <img class="style mt-5" src="{{ Vite::asset('resources/img/porsche.jpg') }}" alt="">
        </div>
-   </div>
+    </div>
 </div>
+<div class="container">
+    <div class="row row-cols-5">
+        <div class="col"><img class="brand " src="{{ Vite::asset('resources/img/bmw-logo.png') }}"></div>
+        <div class="col"> <img class="brand" src="{{ Vite::asset('resources/img/fiat-logo.png') }}"></div>
+        <div class="col"> <img class="brand" src="{{ Vite::asset('resources/img/ferrari-logo.png') }}" alt=""></div>
+        <div class="col"> <img class="brand" src="{{ Vite::asset('resources/img/mercedes-logo.png') }}" alt=""></div>
+        <div class="col"><img class="brand" src="{{ Vite::asset('resources/img/jeep-logo.png') }}"></div>
+    </div>
+</div>
+<div class="container bg-yellow position">
+    <div class="row">
+        <div class="col-6 mt-5">
+            <h1 class="ms-5">Premium Car<br> Rental</h1>
+            <button class="btn btn-dark mt-3 ms-5"><img class="apple-store me-3" src="{{ Vite::asset('resources/img/apple-logo.png') }}">Apple Store</button>
+            <button class="btn btn-dark mt-3 ms-5"><img class="play-store me-3" src="{{ Vite::asset('resources/img/play-store-logo.webp') }}"> Google Play</button>
+        </div>
+        <div class="col-6 mt-5">
+            <img class="mobile me-3" src="{{ Vite::asset('resources/img/mobile.png') }}">
+        </div>
+    </div>
+ </div>
 </main>
 
 @endsection
