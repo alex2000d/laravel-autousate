@@ -10,27 +10,33 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row row-cols-5">
             @foreach($autos as $auto)
-                <div class="col-6 mb-5 p-0 border border-grey border-end-0">
-                <a href="{{ route('admin.autos.show', ['auto' => $auto->id]) }}">
+            <div class="mb-5 col">
+                <!-- <a href="{{ route('admin.autos.show', ['auto' => $auto->id]) }}">
                     <div class="image-auto">
-                        <img src="../storage/{{ $auto->image }}" class="@if(!$auto->image) d-none @endif" alt="{{ $auto->name }}">
+                        <img src="../storage/{{ $auto->image }}" alt="{{ $auto->name }}">
                     </div>
                 </a>
-                </div>
-                <div class="col-6 mb-5 py-3 d-flex flex-column border border-grey border-start-0">
-                        <div class="info flex-grow-1">
-                            <h2 class="mb-5">{{ $auto->name }}</h2>
-                            <p><strong>Motore:</strong> {{ $auto->engine }}</p>
-                            <p><strong>Optionals disponibili:</strong> {{ $auto->optionals }}</p>
-                            <p><strong>quantità:</strong> {{ $auto->quantity }}</p>
-                            <p><strong>disponibilità:</strong> {{ $auto->status }}</p>
+                <div class="text-center">
+                    <h4>{{ $auto->brand }}</h4>
+                    <h4>{{ $auto->model }}</h4>
+                </div> -->
+                <a href="{{ route('admin.autos.show', ['auto' => $auto->id]) }}" class="text-decoration-none">
+                    <div class="card" style="width: 18rem;">
+                        <img src="" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <div class="image-card pb-3">
+                                <img src="{{ $auto->image }}" alt="{{ $auto->name }}">
+                            </div>
+                            <h5 class="card-title">{{ $auto->brand }} {{ $auto->model }}</h5>
+                            <p class="card-text"><strong>Anno: </strong>{{ $auto->year }}</p>
+                            <p class="card-text"><strong>Prezzo: </strong>{{ $auto->price }}&euro;</p>
                         </div>
-                        <div class="mt-auto">
-                            <hr>
-                            <p><strong>Prezzo:</strong> {{ $auto->price }}&euro;</p>
-                            <div class="d-flex justify-content-end">
+                    </div>
+                </a>
+                    <!-- <div class="mt-auto">
+                        <div class="d-flex justify-content-end">
                                 <a href="{{ route('admin.autos.edit', ['auto' => $auto->id]) }}" class="text-decoration-none text-black me-2">
                                     <div class="mt-3 btn btn-success">Modifica</div>
                                 </a>
@@ -45,8 +51,8 @@
                                     </button>
                                 </form>
                             </div>
-                        </div>
-                </div>
+                        </div> -->
+            </div>
             @endforeach
         </div>
 </div>

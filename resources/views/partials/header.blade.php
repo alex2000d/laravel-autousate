@@ -4,7 +4,7 @@
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
                     <div class="logo_laravel">
-                        <img class="logo" src="{{ Vite::asset('resources/img/Rental_Cars-removebg-preview.png') }}" alt="">
+                        <img class="logo" src="{{ Vite::asset('resources/img/Rental_Cars__1_-removebg-preview.png') }}" alt="">
                     </div>
                     {{-- config('app.name', 'Laravel') --}}
                 </a>

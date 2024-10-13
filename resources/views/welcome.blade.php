@@ -1,12 +1,13 @@
 @extends('layouts.app')
 @section('content')
 <main>
-    <div class="jumbo-auto pt-5">
-        <div class="jumbo-content pt-5">
+    <video width="100%" height="100%" autoplay muted loop>
+        <source src="{{ Vite::asset('resources/img/jumbo-video.mp4') }}" type="video/mp4">
+        <!-- <div class="jumbo-content pt-5">
                 <h1>Rental Cars</h1>
                 <strong><p>Scegli l'auto dei tuoi sogni, senza compromessi!</p></strong>
-        </div>
-    </div>
+        </div> -->
+</video>
    <div class="container">
       <div class="row">
           <div class="col-6 mt-5">
