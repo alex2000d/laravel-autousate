@@ -72,12 +72,7 @@
                     </div>
                     <div class="col-6 mb-3">
                         <label for="" class="control-label">Stato disponibilità</label>
-                        <!-- <input type="text" name="status" id="" class="form-control" placeholder="status" value="{{ old('status') }}"> -->
-                         <select name="status" id="">
-                            <option value="">Seleziona disponibilità</option>
-                            <option value="">Available</option>
-                            <option value="">Sold</option>
-                         </select>
+                        <input type="text" name="status" id="" class="form-control" placeholder="status" value="{{ old('status') }}"> 
                     </div>
                     <div class="col-12">
                         <label for="">Optionals disponibili</label>

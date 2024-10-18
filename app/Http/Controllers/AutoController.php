@@ -51,13 +51,14 @@ class AutoController extends Controller
         else {
             $form_data['image'] = 'https://placehold.co/600x400?text=immagine+copertina';
         }
-        $project = new Auto();
-        $project->fill($form_data);
-        $project->save();
+        $auto = new Auto();
+        $auto->fill($form_data);
+        $auto->save();
 
-        if($request->has('optionals')){
-            $optionals = $request->optionals;
-            $optional->optionals()->attach($optionals);
+        if ($request->has('optionals')) {
+
+            $optionals = $request->input('optionals');
+            $auto->optionals()->sync($optionals);
         }
 
         return redirect()->route('admin.autos.index');
