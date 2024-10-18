@@ -44,7 +44,7 @@ class AutosTableSeeder extends Seeder
                     $auto->doors = $faker->randomElement([3, 5]);  // Numero di porte
                     $auto->mileage = $faker->numberBetween(0, 200000);  // Chilometraggio
                     $auto->change_type = $faker->randomElement(['manuale', 'automatica']);  // Cambio
-                    $auto->optionals = implode(', ', $faker->randomElements(['GPS', 'Sedili riscaldati', 'Sensori di parcheggio', 'Tetto apribile', 'Cruise control'], 3));  // Opzioni aggiuntive
+                    // $auto->optionals = implode(', ', $faker->randomElements(['GPS', 'Sedili riscaldati', 'Sensori di parcheggio', 'Tetto apribile', 'Cruise control'], 3));  // Opzioni aggiuntive
                     $auto->price = $faker->randomFloat(2, 10000, 200000);  // Prezzo casuale
                     $auto->image = $faker->imageUrl(640, 480, 'cars', true, 'auto');  // Immagine casuale di un'auto
                     $auto->quantity = $faker->numberBetween(1, 100);  // Quantità disponibile

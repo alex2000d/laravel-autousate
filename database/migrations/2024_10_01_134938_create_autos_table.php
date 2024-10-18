@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('autos', function (Blueprint $table) {
             $table->id();
-            $table->string('optionals');
             $table->string('brand');  // Marca dell'auto (es. BMW, Audi)
             $table->string('model');  // Modello dell'auto
             $table->year('year');  // Anno di produzione dell'auto
