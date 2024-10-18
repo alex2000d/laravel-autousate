@@ -22,7 +22,7 @@
                     <h4>{{ $auto->brand }}</h4>
                     <h4>{{ $auto->model }}</h4>
                 </div> -->
-                <a href="{{ route('admin.autos.show', ['auto' => $auto->id]) }}" class="text-decoration-none">
+                <a href="{{ route('admin.autos.show', ['auto' => $auto->id]) }}" class="text-decoration-none text-black">
                     <div class="card" style="width: 18rem;">
                         <img src="" class="card-img-top" alt="">
                         <div class="card-body">
@@ -32,6 +32,14 @@
                             <h5 class="card-title">{{ $auto->brand }} {{ $auto->model }}</h5>
                             <p class="card-text"><strong>Anno: </strong>{{ $auto->year }}</p>
                             <p class="card-text"><strong>Prezzo: </strong>{{ $auto->price }}&euro;</p>
+                            <a href="{{ route('admin.autos.edit', ['auto' => $auto->id]) }}" class="btn btn-success mb-3">Modifica</a>
+                            <form action="{{ route('admin.autos.destroy', ['auto' => $auto->id]) }}" method="post" class="ms-2">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger delete-auto">
+                                        Elimina
+                                    </button>
+                                </form>
                         </div>
                     </div>
                 </a>

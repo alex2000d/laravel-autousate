@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('optionals', function (Blueprint $table) {
             $table->id();
+            $table->string('optionals', 100);
+            $table->string('slug', 150);
             $table->timestamps();
         });
     }
