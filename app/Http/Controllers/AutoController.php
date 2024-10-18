@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Auto;
+use App\Models\Optional;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
@@ -30,7 +31,8 @@ class AutoController extends Controller
      */
     public function create()
     {
-        return view('admin.autos.create');
+        $optionals = Optional::all();
+        return view('admin.autos.create', compact('optionals'));
     }
 
     /**
@@ -52,6 +54,11 @@ class AutoController extends Controller
         $project = new Auto();
         $project->fill($form_data);
         $project->save();
+
+        if($request->has('optionals')){
+            $optionals = $request->optionals;
+            $optional->optionals()->attach($optionals);
+        }
 
         return redirect()->route('admin.autos.index');
     }
@@ -75,7 +82,8 @@ class AutoController extends Controller
      */
     public function edit(Auto $auto)
     {
-        return view('admin.autos.edit', compact('auto'));
+        $optionals = Optional::all();
+        return view('admin.autos.edit', compact('auto', 'optionals'));
     }
 
     /**
@@ -97,6 +105,13 @@ class AutoController extends Controller
         }
         $auto->update($form_data);
 
+        if ($request->has('optionals')) {
+            $auto->optionals()->sync($request->optionals);
+         }
+         else{
+             $project->optionals()->sync([]);
+         }
+
         return redirect()->route('admin.autos.index');
     }
 
@@ -108,6 +123,7 @@ class AutoController extends Controller
      */
     public function destroy(Auto $auto)
     {
+        $auto->optionals()->sync([]);
         $auto->delete();
 
         return redirect()->route('admin.autos.index');
