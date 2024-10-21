@@ -10,9 +10,13 @@ class Auto extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['brand', 'model', 'year', 'fuel_type', 'horsepower', 'doors', 'change_type', 'color', 'mileage', 'price', 'image', 'quantity', 'status',];
+    protected $fillable = ['brand', 'model', 'slug', 'year', 'fuel_type', 'horsepower', 'doors', 'change_type', 'color', 'mileage', 'price', 'image', 'quantity', 'status',];
 
     public function optionals(){
         return $this->belongsToMany(Optional::class);
+    }
+
+    public static function generateSlug($brand, $model) {
+        return Str::slug($brand . ' ' . $model, '-');
     }
 }
