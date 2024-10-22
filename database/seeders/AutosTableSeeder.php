@@ -47,7 +47,6 @@ class AutosTableSeeder extends Seeder
                     $auto->change_type = $faker->randomElement(['manuale', 'automatica']);  // Cambio
                     $auto->slug = Str::slug($auto->brand.'-'.$auto->model, '-');
                     $auto->price = $faker->randomFloat(2, 10000, 200000);  // Prezzo casuale
-                    $auto->image = $faker->imageUrl(640, 480, 'cars', true, 'auto');  // Immagine casuale di un'auto
                     $auto->quantity = $faker->numberBetween(1, 100);  // Quantità disponibile
                     $auto->status = $faker->randomElement(['available', 'sold']);  // Stato dell'auto: disponibile o venduta
 

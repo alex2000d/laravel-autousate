@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('autos', function (Blueprint $table) {
-            $table->string('slug')->after('model');
+            $table->string('slug')->nullable()->after('model');
         });
     }
 

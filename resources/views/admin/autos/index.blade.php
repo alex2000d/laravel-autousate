@@ -18,7 +18,10 @@
                         <img src="" class="card-img-top" alt="">
                         <div class="card-body">
                             <div class="image-card pb-3">
-                                <img class="img-fluid" src="{{ $auto->image !== null ? asset('./storage/' . $auto->image) : 'https://placehold.co/600x400?text=Immagine+copertina' }}">
+                            <img class="img-fluid" 
+                                    src="{{ $auto->image ? asset('storage/' . $auto->image) : 'https://placehold.co/600x400?text=Immagine+copertina' }}" 
+                                    alt="{{ $auto->brand }} {{ $auto->model }}">
+
                             </div>
                             <h5 class="card-title">{{ $auto->brand }} {{ $auto->model }}</h5>
                             <p class="card-text"><strong>Anno: </strong>{{ $auto->year }}</p>

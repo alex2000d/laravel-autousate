@@ -51,6 +51,10 @@ class AutoController extends Controller
         else {
             $form_data['image'] = 'https://placehold.co/600x400?text=immagine+copertina';
         }
+
+        $form_data['slug'] = Str::slug($form_data['brand'] . '-' . $form_data['model']);
+
+        
         $auto = new Auto();
         $auto->fill($form_data);
         $auto->save();
