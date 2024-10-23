@@ -16,4 +16,20 @@ class AutoController extends Controller
         ]);
 
     }
+    
+    public function show($slug)
+    {
+        $auto = Auto::with('optionals')->where('slug', $slug)->first();
+
+        if($auto){
+            return response()->json([
+                'success' => true,
+                'results' => $auto
+            ]);
+        }
+
+        return response()->json([
+            'success' => false
+        ]);
+    }
 }
