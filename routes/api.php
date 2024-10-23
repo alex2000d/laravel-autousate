@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::get('/autos', [AutoController::class, 'index'])->name('autos');
 Route::get('/autos/{slug}', [AutoController::class, 'show'])->name('show_autos');
+
